@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1701196205 source:c:\users\marti\onedrive\escritorio\adaptaciongalactic\adaptaciongalactic\funciones.cpp
+	"funciones.h"
+
+1701201984 c:\users\marti\onedrive\escritorio\adaptaciongalactic\adaptaciongalactic\funciones.h
+	<iostream>
+	<string>
+
+1701200952 source:c:\users\marti\onedrive\escritorio\adaptaciongalactic\adaptaciongalactic\main.cpp
+	<iostream>
+	"funciones.h"
+	<ctime>
+
