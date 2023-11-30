@@ -7,7 +7,13 @@ int main(){
     std::string nombres[2];
     int puntos[2] = {};
     int contadorPlantetas[3];
-
+    std::cout << "\t\t\t*******ACTUALIZACION*******\n";
+    std::cout << "LUEGO DE HABER MANDADO EL REPOSITORIO A LOS PROFESORES MODIFICAMOS LA POSIBILIDAD DE QUE LOS DADOS SE PUEDAN\n";
+    std::cout << "INGRESAR DE MANERA MANUAL. A LA HORA DE TIRAR LOS DADOS SE PREGUNTA QUE MODALIDAD SE QUIERE ELEGIR\n";
+    std::cout << "POR OTRO LADO, SE AGREGO CANTIDAD DE CARTAS Y EL PLANETA EN EL QUE SE ENCUENTRAN LOS JUGADORES EN EL ENCABEZADO\n";
+    std::cout << "\n\n\n\n\n PRESIONAR TECLA PARA COMENZAR EL JUEGO\n";
+    system("pause>null");
+    system("cls");
     while(true){
         system("cls");
         std::cout << "\t\t\tGALACTIC RACE LITE\n";

@@ -12,7 +12,20 @@ void presentacionJugadores(std::string nombres[]){
 
 }
 int tirarDados(){
-    int dado = rand() % 6 + 1;
+    int op;
+    int dado;
+    std::cout << "1. DADOS MANUALES\n";
+    std::cout << "2. DADOS RANDOM\n";
+    std::cin >> op;
+
+    if(op == 1){
+        std::cout << "ingrese dado\n";
+        std::cin >> dado;
+    }else if(op == 2){
+        dado = rand() % 6 + 1;
+    }
+
+
     return dado;
 
 }
@@ -62,7 +75,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
     int otroJugador;
     int contadorJugadas = 0;
     char urano;
-
+    puntos[0] = 600;
     primerJugador = tiradaTurno(nombres);
 
     if(primerJugador == 0){
@@ -84,7 +97,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                 std::cout << "POR ESTAR EN URANO PODES ELEGIR HACER UNA JUGADA ESPECIAL, DEBES TIRAR LOS DADOS PARA SACAR UNA ESCALERA.\n";
                 std::cout << "EN CASO DE ELEGIR ESTA OPCION NO PODRAS HACER UNA APUESTA COMUN O USO DE CARTAS. (S: SI - N: NO)";
                 std::cin >> urano;
-
+                system("pause>null");
                 if(urano == 's' || urano == 'S'){
                     puntos[jugadorActual] += escalera();
                     contadorJugadas = 2;
@@ -95,20 +108,24 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
             if(estadoPlanetas[jugadorActual][TIERRA] == 1){
                 plaTierra[jugadorActual] = true;
                 std::cout << nombres[jugadorActual] << " RECORDA QUE POR ESTAR EN LA TIERRA NO PODRAS SUMAR CARTAS POR MAS QUE ACIERTES LA APUESTA\n";
+                system("pause>null");
             }else{
                 plaTierra[jugadorActual] = false;
             }
             if(estadoPlanetas[jugadorActual][VENUS] == 1){
                 std::cout << "POR ESTAR EN EL PLANETA VENUS SE LE SUMAN 10 PUNTOS A TU RIVAL\n";
                 puntos[otroJugador] += 10;
+                system("pause>null");
             }
             if(estadoPlanetas[jugadorActual][SATURNO] == 1){
                 std::cout << "POR ESTAR EN EL PLANETA SATURNO SE TE RESTARA LA MITAD DE TUS PUNTOS\n";
                 puntos[jugadorActual] /= 2;
+                system("pause>null");
             }
             if(estadoPlanetas[jugadorActual][PLUTON] == 1){
                 contadorPluton[jugadorActual]++;
                 std::cout << "ESTAS EN EL PLANETA PLUTON, TENES " << 5 - contadorPluton[jugadorActual] << " PARA CANJEARLO O RETROCEDERAS A JUPITER\n";
+                system("pause>null");
             }
             if(contadorPluton[jugadorActual] > 4){
                 estadoPlanetas[jugadorActual][PLUTON] = 0;
@@ -117,7 +134,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
             system("cls");
             std::cout << "-------------------------------------------------------------------------------------\n";
             std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\t\tPlaneta: " << locacion(estadoPlanetas, 0) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
-            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
+            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\t\tCartas: " << cantidadCartas(manoCartas, 1) << "\n";
             std::cout << "-------------------------------------------------------------------------------------\n";
             std::cout << "TURNO DE " << nombres[jugadorActual] << "\n";
             std::cout << "MENU DE JUGADAS\n";
@@ -415,11 +432,11 @@ void darCarta(int manoCartas[][5], int mazo[], int jugadorActual){
         std::cout << "NO PUEDES OBTENER MAS CARTAS HASTA QUE USES ALGUNA DE TU MANO\n";
         return;
     }
-    while(bandera == false){
+    while(bandera != true){
         carta = rand() % 40;
         if(mazo[carta] != 0){
             if(manoCartas[jugadorActual][posicion] == 0){
-                manoCartas[jugadorActual][posicion] == mazo[carta];
+                manoCartas[jugadorActual][posicion] = mazo[carta];
                 mazo[carta] = 0;
                 bandera = true;
             }else{
