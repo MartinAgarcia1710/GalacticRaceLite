@@ -116,8 +116,8 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
             }
 
             std::cout << "------------------------------------------------------------------------------\n";
-            std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\t\tPlaneta: " << locacion(estadoPlanetas, 0) << "\n";
-            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\n";
+            std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\t\tPlaneta: " << locacion(estadoPlanetas, 0) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
+            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
             std::cout << "------------------------------------------------------------------------------\n";
             std::cout << "TURNO DE " << nombres[jugadorActual] << "\n";
             std::cout << "MENU DE JUGADAS\n";
@@ -509,4 +509,15 @@ std::string locacion(int estadoPlaneta[][9], int jugador){
         }
     }
     return actual;
+}
+int cantidadCartas(int manoCartas[][5], int jugador){
+    int contador = 0;
+
+    for(int x = 0; x < 5; x++){
+        if(manoCartas[jugador][x] > 0){
+            contador++;
+        }
+    }
+    return contador;
+
 }
