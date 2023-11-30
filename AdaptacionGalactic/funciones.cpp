@@ -1,3 +1,4 @@
+#include <string.h>
 #include "funciones.h"
 
 void presentacionJugadores(std::string nombres[]){
@@ -63,6 +64,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
     char urano;
 
     primerJugador = tiradaTurno(nombres);
+
     if(primerJugador == 0){
         turno = 0;
     }else{
@@ -114,8 +116,8 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
             }
 
             std::cout << "------------------------------------------------------------------------------\n";
-            std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\n";
-            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\n";
+            std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\t\tPlaneta: " << locacion(estadoPlanetas, 0) << "\n";
+            std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\n";
             std::cout << "------------------------------------------------------------------------------\n";
             std::cout << "TURNO DE " << nombres[jugadorActual] << "\n";
             std::cout << "MENU DE JUGADAS\n";
@@ -496,4 +498,15 @@ int escalera(){
 }
 void endGame(std::string nombres[], int jugadorActual){
     std::cout << "FELICITACIONES " << nombres[jugadorActual] << " GANASTE EL JUEGO!!!\n";
+}
+std::string locacion(int estadoPlaneta[][9], int jugador){
+    std::string nombrePlanetas[9] = {"Mercurio", "Venus", "Tierra", "Marte", "Jupiter", "Saturno", "Urano", "Neptuno", "Pluton"};
+    std::string actual;
+
+    for(int x = 0; x < 9; x++){
+        if(estadoPlaneta[jugador][x] == 1){
+            actual = nombrePlanetas[x];
+        }
+    }
+    return actual;
 }

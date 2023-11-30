@@ -17,4 +17,5 @@ void darCarta(int manoCartas[][5], int mazo[], int jugadorActual);
 void mostrarMano(int manoCartas[][5], int jugadorActual, int puntos[]);
 int escalera();
 void endGame(std::string nombres[], int jugadorActual);
+std::string locacion(int estadoPlaneta[][9], int jugador);
 #endif // FUNCIONES_H_INCLUDED

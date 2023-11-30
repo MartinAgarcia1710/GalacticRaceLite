@@ -11,3 +11,16 @@
 	"funciones.h"
 	<ctime>
 
+1701358987 source:c:\users\marti\onedrive\escritorio\adaptaciongalactic\galacticracelite\adaptaciongalactic\funciones.cpp
+	<string.h>
+	"funciones.h"
+
+1701358392 c:\users\marti\onedrive\escritorio\adaptaciongalactic\galacticracelite\adaptaciongalactic\funciones.h
+	<iostream>
+	<string>
+
+1701200952 source:c:\users\marti\onedrive\escritorio\adaptaciongalactic\galacticracelite\adaptaciongalactic\main.cpp
+	<iostream>
+	"funciones.h"
+	<ctime>
+
