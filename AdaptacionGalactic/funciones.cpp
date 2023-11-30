@@ -28,11 +28,11 @@ int tiradaTurno(std::string nombres[]){
     }
     if(dado[0] < dado[1]){
         std::cout << "EMPEZARA JUGANDO " << nombres[0];
-        //primerJugador = 0;
+        system("pause>null");
         return 0;
     }else{
         std::cout << "EMPEZARA JUGANDO " << nombres[1];
-        //primerJugador = 1;
+        system("pause>null");
         return 1;
     }
     system("pause");
@@ -114,11 +114,11 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                 estadoPlanetas[jugadorActual][PLUTON] = 0;
                 estadoPlanetas[jugadorActual][JUPITER] = 1;
             }
-
-            std::cout << "------------------------------------------------------------------------------\n";
+            system("cls");
+            std::cout << "-------------------------------------------------------------------------------------\n";
             std::cout << "Jugador 1: " << nombres[0] << "\t\tPuntos: " << puntos[0] << "\t\tPlaneta: " << locacion(estadoPlanetas, 0) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
             std::cout << "Jugador 2: " << nombres[1] << "\t\tPuntos: " << puntos[1] << "\t\tPlaneta: " << locacion(estadoPlanetas, 1) << "\t\tCartas: " << cantidadCartas(manoCartas, 0) << "\n";
-            std::cout << "------------------------------------------------------------------------------\n";
+            std::cout << "-------------------------------------------------------------------------------------\n";
             std::cout << "TURNO DE " << nombres[jugadorActual] << "\n";
             std::cout << "MENU DE JUGADAS\n";
             std::cout << "1. APOSTAR\n";
@@ -161,7 +161,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                                 puntos[jugadorActual] += 2;
                                 std::cout << "POR ESTAR EN EL PLANETA NEPTUNO Y NO HABER ACERTADO SUMARAS 2 PUNTOS\n";
                             }
-
+                            system("pause>null");
                             break;
                         case 2:
                             puntosAux = puntos[jugadorActual];
@@ -186,6 +186,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                                 puntos[jugadorActual] += 2;
                                 std::cout << "POR ESTAR EN EL PLANETA NEPTUNO Y NO HABER ACERTADO SUMARAS 2 PUNTOS\n";
                             }
+                            system("pause>null");
                             break;
                         case 3:
                             puntosAux = puntos[jugadorActual];
@@ -215,6 +216,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                                 puntos[jugadorActual] += 2;
                                 std::cout << "POR ESTAR EN EL PLANETA NEPTUNO Y NO HABER ACERTADO SUMARAS 2 PUNTOS\n";
                             }
+                            system("pause>null");
                             break;
                         case 4:
                             puntosAux = puntos[jugadorActual];
@@ -239,6 +241,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                                 puntos[jugadorActual] += 2;
                                 std::cout << "POR ESTAR EN EL PLANETA NEPTUNO Y NO HABER ACERTADO SUMARAS 2 PUNTOS\n";
                             }
+                            system("pause>null");
                             break;
                         case 5:
                             puntosAux = puntos[jugadorActual];
@@ -258,7 +261,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                                     darCarta(manoCartas, mazo, jugadorActual);
                                     std::cout << "POR ESTAR EN EL PLANETA JUPITER OBTIENES CARTA AUNQUE NO ACIERTES LA APUESTA\n";
                                 }
-                            }
+                            }system("pause>null");
                             if(estadoPlanetas[jugadorActual][NEPTUNO] == 1 && puntosAux == puntos[jugadorActual]){
                                 puntos[jugadorActual] += 2;
                                 std::cout << "POR ESTAR EN EL PLANETA NEPTUNO Y NO HABER ACERTADO SUMARAS 2 PUNTOS\n";
@@ -270,6 +273,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
                     std::cout << "CANJEAR\n";
                     if(puntos[jugadorActual] < 50){
                         std::cout << "NO TENES PUNTOS SUFICIENTES PARA CANJEAR\n";
+                        system("pause>null");
                     }else{
                         canjearPlanetas(estadoPlanetas, jugadorActual);
                         contadorJugadas++;
