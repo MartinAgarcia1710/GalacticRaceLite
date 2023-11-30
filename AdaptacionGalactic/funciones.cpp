@@ -75,7 +75,7 @@ void desarrolloJuego(std::string nombres[], int puntos[]){
     int otroJugador;
     int contadorJugadas = 0;
     char urano;
-    puntos[0] = 600;
+
     primerJugador = tiradaTurno(nombres);
 
     if(primerJugador == 0){
